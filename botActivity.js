@@ -20,6 +20,7 @@ class Status {
     const { nka_mbx, nka_brl, nka_usd, nka_percent } =
       await asteriteService.getAsterite();
     this.arrayOfStatus = [
+      "!help",
       `ITU ${itu_mbx} | ${itu_percent}%`,
       `ITU $ ${itu_usd} | ${itu_percent}%`,
       `ITU R$ ${itu_brl} | ${itu_percent}%`,
