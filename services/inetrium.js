@@ -13,10 +13,10 @@ class Inetrium {
       itu_mbx_data.data.currencies.MBX.percentMajor
     }.${itu_mbx_data.data.currencies.MBX.percentMinor.substring(0, 2)}`;
     return {
-      itu_mbx,
-      itu_brl,
-      itu_usd,
-      itu_percent,
+      itu_mbx: parseFloat(itu_mbx).toFixed(4),
+      itu_brl: parseFloat(itu_brl).toFixed(2),
+      itu_usd: parseFloat(itu_usd).toFixed(2),
+      itu_percent: parseFloat(itu_percent).toFixed(2),
     };
   }
 }

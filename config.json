@@ -1,3 +1,16 @@
 {
-    "BOT_TOKEN": "OTc5OTYwMDMzNDk0MzI3MzI2.G_KmeV.2MDlW6Mo2Oc_k1ys7RB1pnYB6DBCzjb58UYp3I"
+  "BOT_TOKEN": "OTc5OTYwMDMzNDk0MzI3MzI2.G_KmeV.2MDlW6Mo2Oc_k1ys7RB1pnYB6DBCzjb58UYp3I",
+  "itu_img": "https://i.imgur.com/rUmUXqB.png",
+  "itu_name": "Inetrium",
+  "itu_symbol": "ITU",
+  "itu_url": "https://inetrium.marblex.io/en/inetrium/detail",
+  "nkt_img": "https://i.imgur.com/TjeJYFz.png",
+  "nkt_name": "Territe",
+  "nkt_symbol": "NKT",
+  "nkt_url": "https://ninokuni.marblex.io/en/token/terraite",
+  "nka_img": "https://i.imgur.com/Sb0sczk.png",
+  "nka_name": "Asterite",
+  "nka_symbol": "NKA",
+  "nka_url": "https://ninokuni.marblex.io/en/token/asterite",
+  "profile_img": "https://i.imgur.com/11Rg2tw.png"
 }

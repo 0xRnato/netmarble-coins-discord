@@ -13,10 +13,10 @@ class Asterite {
       nka_mbx_data.data.currencies.MBX.percentMajor
     }.${nka_mbx_data.data.currencies.MBX.percentMinor.substring(0, 2)}`;
     return {
-      nka_mbx,
-      nka_brl,
-      nka_usd,
-      nka_percent,
+      nka_mbx: parseFloat(nka_mbx).toFixed(4),
+      nka_brl: parseFloat(nka_brl).toFixed(2),
+      nka_usd: parseFloat(nka_usd).toFixed(2),
+      nka_percent: parseFloat(nka_percent).toFixed(2),
     };
   }
 }

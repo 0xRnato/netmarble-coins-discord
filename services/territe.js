@@ -13,10 +13,10 @@ class Territe {
       nkt_mbx_data.data.currencies.MBX.percentMajor
     }.${nkt_mbx_data.data.currencies.MBX.percentMinor.substring(0, 2)}`;
     return {
-      nkt_mbx,
-      nkt_brl,
-      nkt_usd,
-      nkt_percent,
+      nkt_mbx: parseFloat(nkt_mbx).toFixed(4),
+      nkt_brl: parseFloat(nkt_brl).toFixed(2),
+      nkt_usd: parseFloat(nkt_usd).toFixed(2),
+      nkt_percent: parseFloat(nkt_percent).toFixed(2),
     };
   }
 }
