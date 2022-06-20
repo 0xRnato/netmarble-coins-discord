@@ -1,9 +1,15 @@
-const axios = require('axios').default;
+const axios = require("axios").default;
 
 class Territe {
   async getTerrite() {
-    const nkt_mbx_data = await axios.get('https://ninokuni.marblex.io/api/price?tokenType=NKT');
-    const mbx_data = await axios.get('https://api.coingecko.com/api/v3/simple/price?ids=marblex&vs_currencies=usd,brl');
+    const nkt_mbx_data = await axios.get(
+      "https://ninokuni.marblex.io/api/price?tokenType=NKT",
+      { timeout: 30000 }
+    );
+    const mbx_data = await axios.get(
+      "https://api.coingecko.com/api/v3/simple/price?ids=marblex&vs_currencies=usd,brl",
+      { timeout: 30000 }
+    );
     const nkt_mbx = `${
       nkt_mbx_data.data.currencies.MBX.priceMajor
     }.${nkt_mbx_data.data.currencies.MBX.priceMinor.substring(0, 4)}`;

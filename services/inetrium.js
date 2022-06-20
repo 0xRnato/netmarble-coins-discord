@@ -2,8 +2,14 @@ const axios = require('axios').default;
 
 class Inetrium {
   async getInetrium() {
-    const itu_mbx_data = await axios.get('https://inetrium.marblex.io/api/price');
-    const mbx_data = await axios.get('https://api.coingecko.com/api/v3/simple/price?ids=marblex&vs_currencies=usd,brl');
+    const itu_mbx_data = await axios.get(
+      "https://inetrium.marblex.io/api/price",
+      { timeout: 30000 }
+    );
+    const mbx_data = await axios.get(
+      "https://api.coingecko.com/api/v3/simple/price?ids=marblex&vs_currencies=usd,brl",
+      { timeout: 30000 }
+    );
     const itu_mbx = `${
       itu_mbx_data.data.currencies.MBX.priceMajor
     }.${itu_mbx_data.data.currencies.MBX.priceMinor.substring(0, 4)}`;

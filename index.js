@@ -18,20 +18,21 @@ const _response = new Response();
 const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
 const prefix = "!";
 
-const updateStatusJob = cron.schedule("*/10 * * * *", () => {
+const updateStatusJob = cron.schedule("*/30 * * * *", () => {
   console.log("updating array");
   status.updateArray();
 });
 
 client.on("ready", () => {
   console.log([`Logged as ${client.user.tag}`].join("\n"));
+  console.log("updating array");
   status.updateArray();
   updateStatusJob.start();
   setInterval(() => {
     console.log("updating status");
     const _status = status.getStatus();
     client.user.setActivity(_status);
-  }, 5000);
+  }, 10000);
 });
 
 client.on("messageCreate", async (message) => {

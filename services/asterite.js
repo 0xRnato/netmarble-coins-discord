@@ -1,9 +1,15 @@
-const axios = require('axios').default;
+const axios = require("axios").default;
 
 class Asterite {
   async getAsterite() {
-    const nka_mbx_data = await axios.get('https://ninokuni.marblex.io/api/price?tokenType=NKA');
-    const mbx_data = await axios.get('https://api.coingecko.com/api/v3/simple/price?ids=marblex&vs_currencies=usd,brl');
+    const nka_mbx_data = await axios.get(
+      "https://ninokuni.marblex.io/api/price?tokenType=NKA",
+      { timeout: 30000 }
+    );
+    const mbx_data = await axios.get(
+      "https://api.coingecko.com/api/v3/simple/price?ids=marblex&vs_currencies=usd,brl",
+      { timeout: 30000 }
+    );
     const nka_mbx = `${
       nka_mbx_data.data.currencies.MBX.priceMajor
     }.${nka_mbx_data.data.currencies.MBX.priceMinor.substring(0, 4)}`;
