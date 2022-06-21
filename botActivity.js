@@ -13,25 +13,28 @@ class Status {
   }
 
   async updateArray() {
-    const { itu_mbx, itu_brl, itu_usd, itu_percent } =
-      await inetriumService.getInetrium();
-    const { nkt_mbx, nkt_brl, nkt_usd, nkt_percent } =
-      await territeService.getTerrite();
-    const { nka_mbx, nka_brl, nka_usd, nka_percent } =
-      await asteriteService.getAsterite();
-    this.arrayOfStatus = [
-      "!help",
-      `ITU ${itu_mbx} | ${itu_percent}%`,
-      `ITU $ ${itu_usd} | ${itu_percent}%`,
-      `ITU R$ ${itu_brl} | ${itu_percent}%`,
-      `NKT ${nkt_mbx} | ${nkt_percent}%`,
-      `NKT $ ${nkt_usd} | ${nkt_percent}%`,
-      `NKT R$ ${nkt_brl} | ${nkt_percent}%`,
-      `NKA ${nka_mbx} | ${nka_percent}%`,
-      `NKA $ ${nka_usd} | ${nka_percent}%`,
-      `NKA R$ ${nka_brl} | ${nka_percent}%`,
-    ];
-
+    try {
+      const { itu_mbx, itu_brl, itu_usd, itu_percent } =
+        await inetriumService.getInetrium();
+      const { nkt_mbx, nkt_brl, nkt_usd, nkt_percent } =
+        await territeService.getTerrite();
+      const { nka_mbx, nka_brl, nka_usd, nka_percent } =
+        await asteriteService.getAsterite();
+      this.arrayOfStatus = [
+        "!help",
+        `ITU ${itu_mbx} | ${itu_percent}%`,
+        `ITU $ ${itu_usd} | ${itu_percent}%`,
+        `ITU R$ ${itu_brl} | ${itu_percent}%`,
+        `NKT ${nkt_mbx} | ${nkt_percent}%`,
+        `NKT $ ${nkt_usd} | ${nkt_percent}%`,
+        `NKT R$ ${nkt_brl} | ${nkt_percent}%`,
+        `NKA ${nka_mbx} | ${nka_percent}%`,
+        `NKA $ ${nka_usd} | ${nka_percent}%`,
+        `NKA R$ ${nka_brl} | ${nka_percent}%`,
+      ];
+    } catch (error) {
+      console.log(error);
+    }
     return;
   }
 

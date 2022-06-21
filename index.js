@@ -18,7 +18,7 @@ const _response = new Response();
 const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
 const prefix = "!";
 
-const updateStatusJob = cron.schedule("*/30 * * * *", () => {
+const updateStatusJob = cron.schedule("* * * * *", () => {
   console.log("updating array");
   status.updateArray();
 });
@@ -117,7 +117,7 @@ client.on("messageCreate", async (message) => {
           },
         ],
         footer: {
-          text: `Made with ❤️ by 0xRnato\n0xe46304d046d71bca3e92b1400f8feef3ef3e7cd1`,
+          text: `Made with ❤️ by 0xRnato#5058\n0xe46304d046d71bca3e92b1400f8feef3ef3e7cd1`,
           icon_url: config.profile_img,
         },
       };
